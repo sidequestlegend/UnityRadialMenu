@@ -1,0 +1,8 @@
+<svg>
+  <rect visibility="hidden" width="1000" height="0" x="0" y="0" rx="0" ry="0" fill-opacity="0"/>
+  <rect visibility="hidden" width="0" height="1000" x="0" y="0" rx="0" ry="0" fill-opacity="0"/>
+  <path 
+    d="M 875.8770483143634 636.8080573302675 A 400 400 0 0 0 900 500 M 875.8770483143634 636.8080573302675 L 640.9538931178863 551.3030214988503 A 150 150 0 0 0 650 500 L 900 500"
+    fill="#727d95"
+  />
+</svg>

@@ -1,0 +1,35 @@
+@import url("unity-theme://default");
+VisualElement {}
+.unity-label{
+    color: white;
+}
+.menu-transition{
+    transiton-property: opacity, scale;
+    transition-duration: 150ms;
+    opacity: 1;
+    scale: 1;
+}
+.menu-transition-out{
+    opacity: 0;
+    scale: 0.4;
+}
+.menu-transition-in{
+    opacity: 0;
+    scale: 2;
+}
+.touch-point {
+    scale: 0;
+    opacity: 0.5;
+    transiton-property: scale, opacity;
+    transition-duration: 350ms;
+}
+.touch-grow{
+    scale: 1;
+    opacity: 1;
+}
+.touch-no{
+    transition-duration: 0s;
+}
+.hidden{
+    display: none;
+}

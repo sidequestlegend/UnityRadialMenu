@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="radial-scroll-view" class="menu-transition" style="position: absolute; width: 1000px; height: 1000px; left: -500px;">
+        <ui:VisualElement name="scroll-bar" class="menu-transition" style="position: absolute; background-image: url(&apos;project://database/Assets/UI%20Toolkit/VectorGraphics/scroll-mask.svg?fileID=7388822144124034973&amp;guid=6b7b8a53c2a165046867d72129c95dfc&amp;type=3#scroll-mask&apos;); width: 1000px; height: 1000px; overflow: hidden; rotate: 0; top: 0; left: 0;">
+            <ui:VisualElement name="scroll-handle" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/VectorGraphics/scroll.svg?fileID=7388822144124034973&amp;guid=800e69be1ffadea488f19e3f7b180526&amp;type=3#scroll&apos;); width: 1000px; height: 1000px; position: absolute; rotate: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="scroll-view" class="menu-transition" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/VectorGraphics/menu-mask.svg?fileID=7388822144124034973&amp;guid=e1fd4018381e6421dbaf80b96beeafce&amp;type=3#menu-mask&apos;); width: 1000px; height: 1000px; overflow: hidden; left: 0; position: absolute; top: 0;">
+            <ui:VisualElement name="scroll-content" style="position: absolute; rotate: 0; width: 1000px; height: 1000px; scale: 1 1; opacity: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2024 by anonymous (http://jsbin.com/yewaqozonu/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+svg {
+  height: 1000px;
+  width: 1000px;
+  position: absolute;
+}
+</style>
+</head>
+<body>
+  <svg>
+    <rect visibility="hidden" width="1000" height="0" x="0" y="0" rx="0" ry="0" fill-opacity="0"/>
+    <rect visibility="hidden" width="0" height="1000" x="0" y="0" rx="0" ry="0" fill-opacity="0"/>
+    <path id="arc2" fill="#446688" stroke="none" stroke-width="60" stroke-alignment="inside"/>
+  </svg>
+  <!-- <svg>
+    <rect visibility="hidden" width="1000" height="0" x="0" y="0" rx="0" ry="0" fill-opacity="0"/>
+    <rect visibility="hidden" width="0" height="1000" x="0" y="0" rx="0" ry="0" fill-opacity="0"/>
+    <path id="arc3" fill="none" stroke="#446688" stroke-width="30" stroke-alignment="inside"/>
+  </svg> -->
+  <!-- <svg>
+    <rect visibility="hidden" width="1000" height="0" x="0" y="0" rx="0" ry="0" fill-opacity="0"/>
+    <rect visibility="hidden" width="0" height="1000" x="0" y="0" rx="0" ry="0" fill-opacity="0"/>
+    <path id="arc1" fill="grey" stroke="none" stroke-width="60" stroke-alignment="inside"/>
+  </svg> -->
+  <!-- <svg>
+    <circle cx="50" cy="50" r="50" />
+  </svg> -->
+<script id="jsbin-javascript">
+function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+  var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+
+  return {
+    x: centerX + (radius * Math.cos(angleInRadians)),
+    y: centerY + (radius * Math.sin(angleInRadians))
+  };
+}
+
+function describeArc(x, y, radius, innerRadius, startAngle, endAngle){
+
+    var start = polarToCartesian(x, y, radius, endAngle);
+    var end = polarToCartesian(x, y, radius, startAngle);
+
+    var startInner = polarToCartesian(x, y, innerRadius, endAngle);
+    var endInner = polarToCartesian(x, y, innerRadius, startAngle);
+
+    var largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+
+    var d = [
+        "M", start.x, start.y, 
+        "A", radius, radius, 0, largeArcFlag, 0, end.x, end.y,
+        "M", start.x, start.y, 
+        "L", startInner.x, startInner.y, 
+        "A", innerRadius, innerRadius, 0, largeArcFlag, 0, endInner.x, endInner.y,
+        "L", end.x, end.y, 
+    ].join(" ");
+
+    return d;       
+}
+
+window.onload = function() {
+  // document.getElementById("arc1").setAttribute("d", describeArc(500, 500, 400, 150, 90, 110));
+  document.getElementById("arc2").setAttribute("d", describeArc(500, 500, 400, 150, 40, 140));
+  // document.getElementById("arc3").setAttribute("d", describeArc(500, 500, 417, 417, 40, 140));
+};
+
+</script>
+</body>
+</html>
