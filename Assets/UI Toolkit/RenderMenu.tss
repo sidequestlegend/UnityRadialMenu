@@ -30,6 +30,13 @@ VisualElement {}
 .touch-no{
     transition-duration: 0s;
 }
+.menu-item{
+    scale: 1;
+    opacity: 1;
+    transiton-property: scale, opacity;
+    transition-duration: 350ms;
+}
 .hidden{
-    display: none;
+    scale: 0.1;
+    opacity: 0;
 }

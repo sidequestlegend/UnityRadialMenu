@@ -211,6 +211,8 @@ public class RadialMenu : MonoBehaviour
                 segment.Q("menu-item").AddToClassList("hidden");
             }else{
                 segment.Q("menu-item").RemoveFromClassList("hidden");
+                segment.Q<Label>("label").style.left = 734;
+                segment.Q<Label>("label").style.top = 533;
             }
         }
     }
