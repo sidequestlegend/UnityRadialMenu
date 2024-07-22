@@ -57,7 +57,6 @@ public class RadialMenu : MonoBehaviour
             var clickAngle = Mathf.Atan2(e.position.x, posY) * Mathf.Rad2Deg;
             segmentMagnitude.x = e.position.x;
             segmentMagnitude.y = posY;
-            Debug.Log(segmentMagnitude.magnitude);
             if(clickAngle >= viewportStartAngle && clickAngle <= viewportStartAngle + viewportSize &&
                 segmentMagnitude.magnitude > segmentMinRadius && segmentMagnitude.magnitude < segmentMaxRadius) {
                 var clickAngleWithScroll = clickAngle + scrollBar.style.rotate.value.angle.value - viewportStartAngle;
@@ -148,6 +147,7 @@ public class RadialMenu : MonoBehaviour
         radialScrollView.AddToClassList("menu-transition-in");
         EventCallback<TransitionEndEvent> transitionOutCB = null;
         transitionOutCB = e => {
+            scrollBarAngle = 0;
             radialScrollView.UnregisterCallback(transitionOutCB);
             ClearScrollView();
             SetupScrollView();
